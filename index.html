@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Weather Dashboard</title>
+  </head>
+  <body>
+    <div class="container-fluid" id="gradientHeaderContainer">
+        <div class="row">
+            <h1 id="title">Weather Dashboard</h1>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-2">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label"><h1 id="searchTitle">Search for a City:</h1></label>
+                        <input type="text" class="form-control" id="userLocationInput" placeholder="Detriot">
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" type="click" id="searchbtn" id = "first-search-result"onclick= getUserResponse()>Search</button>
+                    </div>
+                    <div class="d-grid gap-2 mt-4" id="second-search-result">
+                        
+                    </div>
+                    
+                </div>
+                    <div class="col-8 mt-3" id="citySearchedContainer">
+                        <div class="container bg-info" id="searchResultContainer">
+                            <span id="cityPicked" class="main-heading-current"></span>
+                            <span class="main-heading-current" id="currentday"></span>
+                            <div class="containerResult">Temp:<span id="currentTemp"></span></div>
+                            <div class="containerResult">Wind:<span id="currentWind"></span></div>
+                            <div class="containerResult">Humidity:<span id="currentHumidity"></span></div>
+                        </div>
+                        <div class="container mt-3">
+                            <div class="row">
+                                <span id="five-day-title" >5-Day Forecast:</span>
+                            <div class="row">
+                                <div class="col-2" id="firstWeatherCard">
+                                    <div class="card" style="width: 14rem;">
+                                        <div class="card-body bg-primary text-white" >
+                                          <h5 class="card-title" id="card-title1"><span id="dateDay1"></span></h5>
+                                          <h6 class="card-subtitle mb-2 text-muted" id="weather-icon1"></h6>
+                                              <p>Temp:</p>
+                                              <p>Wind:</p>
+                                              <p>Humidity:</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 weatherCard">
+                                    <div class="card" style="width: 14rem;">
+                                        <div class="card-body bg-primary text-white">
+                                          <h5 class="card-title" id="card-title1"></h5>
+                                          <h6 class="card-subtitle mb-2 text-muted" id="weather-icon2"></h6>
+                                              <p>Temp:</p>
+                                              <p>Wind:</p>
+                                              <p>Humidity:</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 weatherCard">
+                                    <div class="card" style="width: 14rem;">
+                                        <div class="card-body bg-primary text-white">
+                                          <h5 class="card-title" id="card-title1"></h5>
+                                          <h6 class="card-subtitle mb-2 text-muted" id="weather-icon3"></h6>
+                                              <p>Temp:</p>
+                                              <p>Wind:</p>
+                                              <p>Humidity:</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 weatherCard">
+                                    <div class="card" style="width: 14rem;">
+                                        <div class="card-body bg-primary text-white">
+                                          <h5 class="card-title" id="card-title1"><span id="dateDay4"></span></h5>
+                                          <h6 class="card-subtitle mb-2 text-muted" id="weather-icon4"></h6>
+                                              <p>Temp:</p>
+                                              <p>Wind:</p>
+                                              <p>Humidity:</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2 weatherCard">
+                                    <div class="card" style="width: 14rem;">
+                                        <div class="card-body bg-primary text-white">
+                                          <h5 class="card-title" id="card-title1"><span id="dateDay5"></span></h5>
+                                          <h6 class="card-subtitle mb-2 text-muted" id="weather-icon5"></h6>
+                                              <p>Temp:</p>
+                                              <p>Wind:</p>
+                                              <p>Humidity:</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </form>
+        </div>
+        
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
