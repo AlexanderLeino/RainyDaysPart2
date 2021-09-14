@@ -8,7 +8,14 @@ currentDate = document.getElementById('currentday').innerText= `(${currentDay})`
 //On page load we want to first check local storage and then push any values from local storage into our localStorageUserInputs
 function onPageLoad (){
     console.log(localStorage.getItem('Cities'))
-    localStorageUserInputs = localStorage.getItem('Cities')
+    if(localStorage.getItem('Cities') === undefined) {
+        console.log("no items were found in storage")
+    }
+    else {
+        localStorageUserInputs.push(JSON.parse(localStorage.getItem("Cities")))
+        console.log(localStorageUserInputs)
+
+    }
     
 }
 
@@ -48,3 +55,4 @@ function updateHTMLPage(data) {
     // Search Results should use div class 
     //<div class="d-grid gap-2 mt-3"></div>
 }
+onPageLoad()
