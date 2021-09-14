@@ -48,4 +48,3 @@ function updateHTMLPage(data) {
     // Search Results should use div class 
     //<div class="d-grid gap-2 mt-3"></div>
 }
-onPageLoad()
