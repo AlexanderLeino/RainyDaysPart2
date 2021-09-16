@@ -2,7 +2,6 @@ var localStorageUserInputs = []
 //When the user opens the page they will have the option to type in the search box. Once they submit their answer it will run a function to check users response. If user response is a city then it will  
 
 var localStorage = window.localStorage
-var localStorageSavedInputs = JSON.parse(localStorage.getItem('Cities'))
 
 var currentDay = moment().format("L")
 currentDate = document.getElementById('currentday').innerText= `(${currentDay})`
@@ -54,6 +53,7 @@ function retrieveData (userLocationInput){
     })
 }
 function generateButtons (userLocationInput){
+    var localStorageSavedInputs = JSON.parse(localStorage.getItem('Cities'))
     
     for (var i = 0; i < localStorageSavedInputs.length; i++) {
         var previousSearchBtn = document.createElement('button')
