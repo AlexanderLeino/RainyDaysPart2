@@ -4,29 +4,27 @@ var localStorage = window.localStorage
 var localStorageUserInputs = []
 var currentDay = moment().format("L")
 currentDate = document.getElementById('currentday').innerText= `(${currentDay})`
-
-//On page load we want to first check local storage and then push any values from local storage into our localStorageUserInputs
-function onPageLoad (){
-    console.log(localStorage.getItem('Cities'))
-    if(localStorage.getItem('Cities') === undefined) {
-        console.log("no items were found in storage")
-    }
-    else {
-        localStorageUserInputs.push(JSON.parse(localStorage.getItem("Cities")))
-        console.log(localStorageUserInputs)
-
-    }
-    
-}
-
 var searchBtn = document.getElementById('searchbtn').addEventListener('click',function getUserResponse(event){
     event.preventDefault()
 })
 
+//On page load we want to first check local storage and then push any values from local storage into our localStorageUserInputs
+function onPageLoad (){
+    console.log(localStorage.getItem('Cities'))
+    if(localStorage.getItem('Cities') === null) {
+        console.log("no items were found in storage")
+    }
+    else {
+        localStorageUserInputs = (JSON.parse(localStorage.getItem("Cities")))
+        generateButtons(localStorageUserInputs)
+    }
+    
+}
+
+
 function getUserResponse(){
     var userLocationInput = document.getElementById('userLocationInput').value
     if(userLocationInput) {
-        console.log(userLocationInput)
         retrieveData(userLocationInput)
     }
 }
@@ -50,8 +48,20 @@ function retrieveData (userLocationInput){
         updateHTMLPage(data)
     })
 }
+function generateButtons (userLocationInput){
+console.log(userLocationInput)
+for (var i = 0; i < userLocationInput.length; i++) {
+    console.log(userLocationInput[i])
+    var previousSearchBtn = document.createElement('button')
+    previousSearchBtn.classList.add('citybtn')
+    previousSearchBtn.innerText= userLocationInput[i]
+    previousSearchBtn.setAttribute("type", "click")
+    console.log(previousSearchBtn)
+}
+}
+
 function updateHTMLPage(data) {
-    
+    console.log(data)
     // Search Results should use div class 
     //<div class="d-grid gap-2 mt-3"></div>
 }
